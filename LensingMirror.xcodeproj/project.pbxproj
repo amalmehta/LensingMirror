@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0133D5E6F1D11ED9CD1660F3 /* GPUTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442ADADB4B2489A3EE25E9BC /* GPUTypes.swift */; };
+		0FAD09369F9A7452D842F0BB /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E47806625518B410618E6 /* ControlBar.swift */; };
+		1AAAB839168846EAE6C726BC /* LensCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D5AB428310500CEE8DCF /* LensCurves.swift */; };
+		2A78DF287C6C9448F295FE3D /* GPUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE911AD584F295E7C1A0CDEE /* GPUTests.swift */; };
+		2B15BC15C7E2B2D6A45B77A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D89AE663727946F2F1FCA /* SettingsView.swift */; };
+		607ABA2A4E5A1DC3EE32BC2E /* LensingMirrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8A9A77E39C836DE82225 /* LensingMirrorApp.swift */; };
+		61CC9F0A7E4204C909784CDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB11AA9A8BD94CCECDD9CB /* ContentView.swift */; };
+		6CFA59C9D0B8F12BC5E5795E /* MirrorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B823FE06D95CBC3A84B273 /* MirrorRenderer.swift */; };
+		81BBA1EBFFD6CD1E369DC892 /* RendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85709E615A519E388A48D54 /* RendererTests.swift */; };
+		8ADFC4699D5E74F317386411 /* Kerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4A42F360E82CA4BC45ED53 /* Kerr.swift */; };
+		9D951D3C87297BC3C0C5C541 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D74D71E67337631DEAD3F6 /* Exporter.swift */; };
+		A2401CFD841BABE5C8BED94C /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2194E98FC8A8B812F5B8E81F /* Palette.swift */; };
+		A2B149F2259EF8D9690C801B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196D221EDA16CEF7902B1E7A /* Preferences.swift */; };
+		BB85129EDCD9753CCAC975BD /* OverlayLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D053BA7964BF1B5464FC4 /* OverlayLayer.swift */; };
+		D52088598171645DEDA3CE43 /* PhysicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0DB49611277CB2A97A6FD /* PhysicsTests.swift */; };
+		D9AECEACFB412E162E18ADBD /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418CE1E9D6671F26E045B6C /* AppModel.swift */; };
+		E53F851745512E48C8A1717C /* DocImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C39C7B288B76B4BF0F276D /* DocImageTests.swift */; };
+		E59BE109F991DF1D5D87C974 /* LensEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998D9083351A713841BF1C75 /* LensEngine.swift */; };
+		E64CC907999818AF8FCBE089 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC715D6F8F40D5A19D2C321 /* TestPattern.swift */; };
+		F83040764D1542E7B2C7F11B /* FeedbackTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13AD7E570703E0466B3443 /* FeedbackTab.swift */; };
+		FA08CD6FC11B0679EA633434 /* LensShaders.msl in Resources */ = {isa = PBXBuildFile; fileRef = 36CFD4E0BFCF700746D35A0A /* LensShaders.msl */; };
+		FD67B1130AD91053072A0E54 /* CameraSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C743F298C8A0999751F99 /* CameraSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4B6238EF350DDB2428EF1BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3A9084575392F3B698E10C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2057DCCF436910BA21691F52;
+			remoteInfo = LensingMirror;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11C39C7B288B76B4BF0F276D /* DocImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocImageTests.swift; sourceTree = "<group>"; };
+		196D221EDA16CEF7902B1E7A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2194E98FC8A8B812F5B8E81F /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		273F8BE24189D9D4D69F0B45 /* LensingMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LensingMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4A42F360E82CA4BC45ED53 /* Kerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kerr.swift; sourceTree = "<group>"; };
+		31B823FE06D95CBC3A84B273 /* MirrorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorRenderer.swift; sourceTree = "<group>"; };
+		33D74D71E67337631DEAD3F6 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
+		36CFD4E0BFCF700746D35A0A /* LensShaders.msl */ = {isa = PBXFileReference; path = LensShaders.msl; sourceTree = "<group>"; };
+		4418CE1E9D6671F26E045B6C /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		442ADADB4B2489A3EE25E9BC /* GPUTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUTypes.swift; sourceTree = "<group>"; };
+		4E8B0737B4128B3A58D73C3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		568C8A9A77E39C836DE82225 /* LensingMirrorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensingMirrorApp.swift; sourceTree = "<group>"; };
+		5B13AD7E570703E0466B3443 /* FeedbackTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTab.swift; sourceTree = "<group>"; };
+		7AC715D6F8F40D5A19D2C321 /* TestPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPattern.swift; sourceTree = "<group>"; };
+		7B8D053BA7964BF1B5464FC4 /* OverlayLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLayer.swift; sourceTree = "<group>"; };
+		8038FE6879103F94B84B14CF /* LensingMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LensingMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		868C743F298C8A0999751F99 /* CameraSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSource.swift; sourceTree = "<group>"; };
+		998D9083351A713841BF1C75 /* LensEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensEngine.swift; sourceTree = "<group>"; };
+		C6B6D5AB428310500CEE8DCF /* LensCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensCurves.swift; sourceTree = "<group>"; };
+		CFD0DB49611277CB2A97A6FD /* PhysicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsTests.swift; sourceTree = "<group>"; };
+		D40D89AE663727946F2F1FCA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D85709E615A519E388A48D54 /* RendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererTests.swift; sourceTree = "<group>"; };
+		E45E47806625518B410618E6 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		EE911AD584F295E7C1A0CDEE /* GPUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUTests.swift; sourceTree = "<group>"; };
+		F1AB11AA9A8BD94CCECDD9CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0FC7216883C38CD5A0668DFC /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				C6B6D5AB428310500CEE8DCF /* LensCurves.swift */,
+				7B8D053BA7964BF1B5464FC4 /* OverlayLayer.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		1D70821E99B214BB353D307A /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				33D74D71E67337631DEAD3F6 /* Exporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		4101A7B4B8519B16106B8F16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				273F8BE24189D9D4D69F0B45 /* LensingMirror.app */,
+				8038FE6879103F94B84B14CF /* LensingMirrorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C4CAB1F6E01BAFA1092BA1E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				11C39C7B288B76B4BF0F276D /* DocImageTests.swift */,
+				EE911AD584F295E7C1A0CDEE /* GPUTests.swift */,
+				CFD0DB49611277CB2A97A6FD /* PhysicsTests.swift */,
+				D85709E615A519E388A48D54 /* RendererTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8277B34D5FC7F31FD68D48C4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B9D7D8E4F12095DA7C5B820B /* App */,
+				E42FC9324F029B250B128C7B /* Camera */,
+				1D70821E99B214BB353D307A /* Export */,
+				0FC7216883C38CD5A0668DFC /* Overlay */,
+				9F4D5FA4FAD2160996664FB6 /* Physics */,
+				C20B053A9CF0191F203A826F /* Rendering */,
+				A38CFDD8A226033B4D62F6F1 /* UI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9F4D5FA4FAD2160996664FB6 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				2B4A42F360E82CA4BC45ED53 /* Kerr.swift */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		A38CFDD8A226033B4D62F6F1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F1AB11AA9A8BD94CCECDD9CB /* ContentView.swift */,
+				E45E47806625518B410618E6 /* ControlBar.swift */,
+				5B13AD7E570703E0466B3443 /* FeedbackTab.swift */,
+				2194E98FC8A8B812F5B8E81F /* Palette.swift */,
+				D40D89AE663727946F2F1FCA /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B9D7D8E4F12095DA7C5B820B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4418CE1E9D6671F26E045B6C /* AppModel.swift */,
+				4E8B0737B4128B3A58D73C3B /* Info.plist */,
+				568C8A9A77E39C836DE82225 /* LensingMirrorApp.swift */,
+				196D221EDA16CEF7902B1E7A /* Preferences.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C20B053A9CF0191F203A826F /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				442ADADB4B2489A3EE25E9BC /* GPUTypes.swift */,
+				998D9083351A713841BF1C75 /* LensEngine.swift */,
+				36CFD4E0BFCF700746D35A0A /* LensShaders.msl */,
+				31B823FE06D95CBC3A84B273 /* MirrorRenderer.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		E42FC9324F029B250B128C7B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				868C743F298C8A0999751F99 /* CameraSource.swift */,
+				7AC715D6F8F40D5A19D2C321 /* TestPattern.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		E81F6014B5129A084FE0B98D = {
+			isa = PBXGroup;
+			children = (
+				8277B34D5FC7F31FD68D48C4 /* Sources */,
+				6C4CAB1F6E01BAFA1092BA1E /* Tests */,
+				4101A7B4B8519B16106B8F16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2057DCCF436910BA21691F52 /* LensingMirror */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BBAE3BB98E36B70F64EDA3 /* Build configuration list for PBXNativeTarget "LensingMirror" */;
+			buildPhases = (
+				AA2BD0AD383B363C3DFA86C8 /* Sources */,
+				CA4A0D54212142D33B8BFA6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LensingMirror;
+			packageProductDependencies = (
+			);
+			productName = LensingMirror;
+			productReference = 273F8BE24189D9D4D69F0B45 /* LensingMirror.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61F94C2C9B5D9BC09C8E097F /* LensingMirrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37CEEB936994AC4872269666 /* Build configuration list for PBXNativeTarget "LensingMirrorTests" */;
+			buildPhases = (
+				24CFB4C42F5A1356CEBB300F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9FF1105EF7FEADCE39934C5 /* PBXTargetDependency */,
+			);
+			name = LensingMirrorTests;
+			packageProductDependencies = (
+			);
+			productName = LensingMirrorTests;
+			productReference = 8038FE6879103F94B84B14CF /* LensingMirrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E3A9084575392F3B698E10C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2057DCCF436910BA21691F52 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					61F94C2C9B5D9BC09C8E097F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 0D98D4A0C3B7256896908266 /* Build configuration list for PBXProject "LensingMirror" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E81F6014B5129A084FE0B98D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4101A7B4B8519B16106B8F16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2057DCCF436910BA21691F52 /* LensingMirror */,
+				61F94C2C9B5D9BC09C8E097F /* LensingMirrorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA4A0D54212142D33B8BFA6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA08CD6FC11B0679EA633434 /* LensShaders.msl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24CFB4C42F5A1356CEBB300F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53F851745512E48C8A1717C /* DocImageTests.swift in Sources */,
+				2A78DF287C6C9448F295FE3D /* GPUTests.swift in Sources */,
+				D52088598171645DEDA3CE43 /* PhysicsTests.swift in Sources */,
+				81BBA1EBFFD6CD1E369DC892 /* RendererTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA2BD0AD383B363C3DFA86C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9AECEACFB412E162E18ADBD /* AppModel.swift in Sources */,
+				FD67B1130AD91053072A0E54 /* CameraSource.swift in Sources */,
+				61CC9F0A7E4204C909784CDC /* ContentView.swift in Sources */,
+				0FAD09369F9A7452D842F0BB /* ControlBar.swift in Sources */,
+				9D951D3C87297BC3C0C5C541 /* Exporter.swift in Sources */,
+				F83040764D1542E7B2C7F11B /* FeedbackTab.swift in Sources */,
+				0133D5E6F1D11ED9CD1660F3 /* GPUTypes.swift in Sources */,
+				8ADFC4699D5E74F317386411 /* Kerr.swift in Sources */,
+				1AAAB839168846EAE6C726BC /* LensCurves.swift in Sources */,
+				E59BE109F991DF1D5D87C974 /* LensEngine.swift in Sources */,
+				607ABA2A4E5A1DC3EE32BC2E /* LensingMirrorApp.swift in Sources */,
+				6CFA59C9D0B8F12BC5E5795E /* MirrorRenderer.swift in Sources */,
+				BB85129EDCD9753CCAC975BD /* OverlayLayer.swift in Sources */,
+				A2401CFD841BABE5C8BED94C /* Palette.swift in Sources */,
+				A2B149F2259EF8D9690C801B /* Preferences.swift in Sources */,
+				2B15BC15C7E2B2D6A45B77A6 /* SettingsView.swift in Sources */,
+				E64CC907999818AF8FCBE089 /* TestPattern.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9FF1105EF7FEADCE39934C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2057DCCF436910BA21691F52 /* LensingMirror */;
+			targetProxy = 4B6238EF350DDB2428EF1BAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0272D09EC428D513334C1BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amalmehta.LensingMirrorTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lensing Mirror.app/Contents/MacOS/Lensing Mirror";
+			};
+			name = Debug;
+		};
+		0DA18238BF7531093AD0A536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		16BE317D4BFCC99CB6AB5D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amalmehta.LensingMirror;
+				PRODUCT_MODULE_NAME = LensingMirror;
+				PRODUCT_NAME = "Lensing Mirror";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		34385408BEDC975A1C22EF36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amalmehta.LensingMirror;
+				PRODUCT_MODULE_NAME = LensingMirror;
+				PRODUCT_NAME = "Lensing Mirror";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6A24DA4C8208C023ACF24A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8BB0483471CF77F9DA6C8956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amalmehta.LensingMirrorTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lensing Mirror.app/Contents/MacOS/Lensing Mirror";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D98D4A0C3B7256896908266 /* Build configuration list for PBXProject "LensingMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA18238BF7531093AD0A536 /* Debug */,
+				6A24DA4C8208C023ACF24A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		37CEEB936994AC4872269666 /* Build configuration list for PBXNativeTarget "LensingMirrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0272D09EC428D513334C1BBE /* Debug */,
+				8BB0483471CF77F9DA6C8956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A4BBAE3BB98E36B70F64EDA3 /* Build configuration list for PBXNativeTarget "LensingMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34385408BEDC975A1C22EF36 /* Debug */,
+				16BE317D4BFCC99CB6AB5D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E3A9084575392F3B698E10C /* Project object */;
+}

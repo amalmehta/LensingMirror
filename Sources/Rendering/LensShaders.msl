@@ -1,0 +1,149 @@
+#include <metal_stdlib>
+using namespace metal;
+
+// Must match MapParams in GPUTypes.swift. 4-vectors are (x, y, z, t), Kerr–Schild coordinates.
+struct MapParams {
+    float4 camPos;      // xyz: observer position
+    float4 u;           // observer 4-velocity
+    float4 eFwd;        // orthonormal triad: forward, right, up
+    float4 eRight;
+    float4 eUp;
+    float4 camL;        // xyz: l at the observer, w: f at the observer
+    float spin, horizon, plane, tanHalfFov;
+    float aspect, stepK, rEscape, sourceScale;
+    int maxSteps, width, height, pad;
+    float rCapture;     // inside this, heading inward, the ray is captured
+    int rowOffset;      // first map row of this dispatch (maps are built in bands)
+    float pad1, pad2;
+};
+
+// Must match CompositeParams in GPUTypes.swift.
+struct CompositeParams {
+    float2 origin;      // pane origin in target pixels
+    float2 size;        // pane size in target pixels
+    float2 mapSize;     // lens map texels
+    float camAspect;    // source width / height
+    float paneAspect;
+    float mirror;       // 1 = flip the source left-right
+    float pad0;
+    float2 pad1;
+};
+
+// ---- Kerr–Schild Hamiltonian ray equation (mirrors Kerr.swift line for line) ----
+static float kerrRadius(float3 q, float a) {
+    float a2 = a * a, bb = dot(q, q) - a2;
+    return sqrt(0.5 * (bb + sqrt(bb * bb + 4.0 * a2 * q.z * q.z)));
+}
+
+static void kerrDeriv(float3 q, float3 p, float a, thread float3 &v, thread float3 &dp) {
+    float a2 = a * a;
+    float r = kerrRadius(q, a);
+    float r2 = r * r, den = r2 + a2, Q = r2 * r2 + a2 * q.z * q.z;
+    float f = 2.0 * r2 * r / Q;
+    float3 l = float3((r * q.x + a * q.y) / den, (r * q.y - a * q.x) / den, q.z / r);
+    float c = 1.0 + dot(l, p);
+    v = p - f * c * l;
+    float3 dr = (r / Q) * float3(r2 * q.x, r2 * q.y, q.z * den);
+    float3 dQ = 4.0 * r2 * r * dr + float3(0.0, 0.0, 2.0 * a2 * q.z);
+    float3 df = 2.0 * (3.0 * r2 * dr * Q - r2 * r * dQ) / (Q * Q);
+    float A = q.x * p.x + q.y * p.y, B = q.y * p.x - q.x * p.y, N = r * A + a * B;
+    float3 dS = (dr * A + r * float3(p.x, p.y, 0.0) + a * float3(-p.y, p.x, 0.0)) / den
+              - N * 2.0 * r * dr / (den * den)
+              + p.z * (float3(0.0, 0.0, 1.0 / r) - q.z * dr / r2);
+    dp = 0.5 * (df * c * c + 2.0 * f * c * dS);
+}
+
+// One texel per screen pixel: where on the mirror plane that pixel's light came from.
+// Output: xy = source position in unlensed screen units, z = 0 captured / 1 mirror / 2 missed.
+kernel void buildLensMap(texture2d<float, access::write> map [[texture(0)]],
+                         constant MapParams &P [[buffer(0)]],
+                         uint2 tid [[thread_position_in_grid]]) {
+    uint2 gid = uint2(tid.x, tid.y + uint(P.rowOffset));
+    if (gid.x >= uint(P.width) || gid.y >= uint(P.height)) return;
+    float x = ((float(gid.x) + 0.5) / float(P.width) * 2.0 - 1.0) * P.aspect;
+    float y = 1.0 - (float(gid.y) + 0.5) / float(P.height) * 2.0;
+    float tx = x * P.tanHalfFov, ty = y * P.tanHalfFov;
+
+    // Photon 4-momentum in the observer's frame, lowered with the metric, scaled to p_t = −1.
+    float4 n = (P.eFwd + tx * P.eRight + ty * P.eUp) * rsqrt(1.0 + tx * tx + ty * ty);
+    float4 pu = P.u - n;
+    float fc = P.camL.w;
+    float lp = pu.w + dot(P.camL.xyz, pu.xyz);
+    float pt = -pu.w + fc * lp;
+    float3 p = (pu.xyz + fc * lp * P.camL.xyz) / -pt;
+    float3 q = P.camPos.xyz;
+
+    float a = P.spin, rh = P.horizon, S = P.plane;
+    float4 result = float4(0.0);                      // captured unless shown otherwise
+    for (int i = 0; i < P.maxSteps; i++) {
+        float3 k1x, k1p;
+        kerrDeriv(q, p, a, k1x, k1p);
+        float r = kerrRadius(q, a);
+        if (r < rh + 0.02 || dot(p, p) > 1e4) break;
+        if (r < P.rCapture && dot(q, -k1x) < 0.0) break;
+        if (r > P.rEscape && dot(q, -k1x) > 0.0) {
+            float3 t = -k1x;
+            if (t.x > 0.0 && q.x < S) {
+                float3 h = q + t * ((S - q.x) / t.x);
+                result = float4(h.yz * P.sourceScale, 1.0, 0.0);
+            } else {
+                result = float4(0.0, 0.0, 2.0, 0.0);
+            }
+            break;
+        }
+        float h = -P.stepK * r * clamp((r - rh) * 2.0, 0.05, 1.0) / max(length(k1x), 1.0);
+        float3 k2x, k2p, k3x, k3p, k4x, k4p;
+        kerrDeriv(q + 0.5 * h * k1x, p + 0.5 * h * k1p, a, k2x, k2p);
+        kerrDeriv(q + 0.5 * h * k2x, p + 0.5 * h * k2p, a, k3x, k3p);
+        kerrDeriv(q + h * k3x,       p + h * k3p,       a, k4x, k4p);
+        float3 nq = q + h / 6.0 * (k1x + 2.0 * k2x + 2.0 * k3x + k4x);
+        p += h / 6.0 * (k1p + 2.0 * k2p + 2.0 * k3p + k4p);
+        if ((q.x - S) * (nq.x - S) < 0.0) {
+            float3 hit = q + (nq - q) * ((S - q.x) / (nq.x - q.x));
+            result = float4(hit.yz * P.sourceScale, 1.0, 0.0);
+            break;
+        }
+        q = nq;
+    }
+    map.write(result, gid);
+}
+
+// ---- Composite: look every pixel up in the lens map, then in the camera image ----
+struct VOut { float4 pos [[position]]; };
+
+vertex VOut fullscreenVertex(uint vid [[vertex_id]]) {
+    float2 p = float2((vid << 1) & 2, vid & 2);
+    VOut o;
+    o.pos = float4(p * 2.0 - 1.0, 0.0, 1.0);
+    return o;
+}
+
+static float3 tapColor(float4 m, texture2d<float> cam, sampler s, constant CompositeParams &C) {
+    if (m.z < 0.5) return float3(0.0);                       // inside the shadow
+    if (m.z > 1.5) return float3(0.07, 0.08, 0.14);          // light that missed the mirror: from behind you
+    // Aspect-fill: the camera image covers the whole pane when unlensed.
+    float k = max(1.0, C.paneAspect / C.camAspect);
+    float2 uv = float2(0.5 + m.x / (2.0 * C.camAspect * k), 0.5 - m.y / (2.0 * k));
+    if (C.mirror > 0.5) uv.x = 1.0 - uv.x;
+    return cam.sample(s, uv).rgb;
+}
+
+fragment float4 compositeFragment(VOut in [[stage_in]],
+                                  texture2d<float, access::read> map [[texture(0)]],
+                                  texture2d<float> cam [[texture(1)]],
+                                  constant CompositeParams &C [[buffer(0)]]) {
+    constexpr sampler s(filter::linear, address::mirrored_repeat);
+    float2 uvp = (in.pos.xy - C.origin) / C.size;
+    float2 mp = uvp * C.mapSize - 0.5;
+    float2 f = fract(mp);
+    int2 i0 = int2(floor(mp));
+    int2 hi = int2(C.mapSize) - 1;
+    // Blend the colours of the four nearest map texels (not their coordinates), so the
+    // shadow edge and folds stay smooth when the map is coarser than the screen.
+    float3 c00 = tapColor(map.read(uint2(clamp(i0,               int2(0), hi))), cam, s, C);
+    float3 c10 = tapColor(map.read(uint2(clamp(i0 + int2(1, 0), int2(0), hi))), cam, s, C);
+    float3 c01 = tapColor(map.read(uint2(clamp(i0 + int2(0, 1), int2(0), hi))), cam, s, C);
+    float3 c11 = tapColor(map.read(uint2(clamp(i0 + int2(1, 1), int2(0), hi))), cam, s, C);
+    float3 c = mix(mix(c00, c10, f.x), mix(c01, c11, f.x), f.y);
+    return float4(c, 1.0);
+}

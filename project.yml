@@ -1,0 +1,58 @@
+name: LensingMirror
+options:
+  bundleIdPrefix: com.amalmehta
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+targets:
+  LensingMirror:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        excludes: ["**/*.msl"]
+      - path: Sources/Rendering/LensShaders.msl
+        buildPhase: resources
+    info:
+      path: Sources/App/Info.plist
+      properties:
+        CFBundleDisplayName: Lensing Mirror
+        CFBundleName: Lensing Mirror
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        LSApplicationCategoryType: public.app-category.entertainment
+        NSCameraUsageDescription: Lensing Mirror bends your live camera image through a simulated black hole. Video stays on this Mac.
+        NSHighResolutionCapable: true
+    settings:
+      base:
+        PRODUCT_NAME: Lensing Mirror
+        PRODUCT_MODULE_NAME: LensingMirror
+        PRODUCT_BUNDLE_IDENTIFIER: com.amalmehta.LensingMirror
+        ENABLE_HARDENED_RUNTIME: NO
+        GENERATE_INFOPLIST_FILE: NO
+  LensingMirrorTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Tests]
+    dependencies:
+      - target: LensingMirror
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.amalmehta.LensingMirrorTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Lensing Mirror.app/Contents/MacOS/Lensing Mirror"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Lensing Mirror:
+    build:
+      targets:
+        LensingMirror: all
+        LensingMirrorTests: [test]
+    test:
+      targets: [LensingMirrorTests]
