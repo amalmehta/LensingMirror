@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Lensing Mirror: a dark black-hole shadow ringed by a bright Einstein ring,
+       brighter and nudged on one side the way spin skews it. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#FFF1E3"/>
+      <stop offset="1" stop-color="#F7CFAE"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.55" stop-color="#FFE2B8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFE2B8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFE7C2"/>
+      <stop offset="1" stop-color="#EE9A2A"/>
+    </linearGradient>
+    <radialGradient id="hole" cx="0.42" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#3A2F45"/>
+      <stop offset="1" stop-color="#1D1726"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#5A3A20" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)" filter="url(#shadow)"/>
+  <circle cx="512" cy="512" r="340" fill="url(#halo)"/>
+  <path fill="url(#ring)" fill-rule="evenodd"
+        d="M 786 512 A 262 262 0 1 1 262 512 A 262 262 0 1 1 786 512 Z
+           M 714 512 A 216 216 0 1 0 282 512 A 216 216 0 1 0 714 512 Z"/>
+  <circle cx="490" cy="512" r="182" fill="url(#hole)"/>
+</svg>

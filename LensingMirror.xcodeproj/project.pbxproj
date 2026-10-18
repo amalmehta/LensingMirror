@@ -12,6 +12,7 @@
 		1AAAB839168846EAE6C726BC /* LensCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D5AB428310500CEE8DCF /* LensCurves.swift */; };
 		2A78DF287C6C9448F295FE3D /* GPUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE911AD584F295E7C1A0CDEE /* GPUTests.swift */; };
 		2B15BC15C7E2B2D6A45B77A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D89AE663727946F2F1FCA /* SettingsView.swift */; };
+		5619C05FBF55380F744FE45C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27B5D52B8FE8BBD8F639ADB /* Assets.xcassets */; };
 		607ABA2A4E5A1DC3EE32BC2E /* LensingMirrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568C8A9A77E39C836DE82225 /* LensingMirrorApp.swift */; };
 		61CC9F0A7E4204C909784CDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB11AA9A8BD94CCECDD9CB /* ContentView.swift */; };
 		6CFA59C9D0B8F12BC5E5795E /* MirrorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B823FE06D95CBC3A84B273 /* MirrorRenderer.swift */; };
@@ -60,6 +61,7 @@
 		8038FE6879103F94B84B14CF /* LensingMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LensingMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868C743F298C8A0999751F99 /* CameraSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSource.swift; sourceTree = "<group>"; };
 		998D9083351A713841BF1C75 /* LensEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensEngine.swift; sourceTree = "<group>"; };
+		C27B5D52B8FE8BBD8F639ADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6B6D5AB428310500CEE8DCF /* LensCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensCurves.swift; sourceTree = "<group>"; };
 		CFD0DB49611277CB2A97A6FD /* PhysicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsTests.swift; sourceTree = "<group>"; };
 		D40D89AE663727946F2F1FCA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4418CE1E9D6671F26E045B6C /* AppModel.swift */,
+				C27B5D52B8FE8BBD8F639ADB /* Assets.xcassets */,
 				4E8B0737B4128B3A58D73C3B /* Info.plist */,
 				568C8A9A77E39C836DE82225 /* LensingMirrorApp.swift */,
 				196D221EDA16CEF7902B1E7A /* Preferences.swift */,
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5619C05FBF55380F744FE45C /* Assets.xcassets in Resources */,
 				FA08CD6FC11B0679EA633434 /* LensShaders.msl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
