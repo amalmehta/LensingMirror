@@ -6,7 +6,7 @@ Lensing Mirror is a Mac app that shows your live webcam image bent by a black ho
 ## Build history
 
 ```mermaid
-flowchart LR
+flowchart TD
   idea["Idea: webcam mirror bent by a Schwarzschild or Kerr black hole, built on black_hole_simulator"]
   d1["Decision: port the WebGL Kerr-Schild tracer to Metal"]
   d2["Decision: your face is a flat screen behind the hole"]
