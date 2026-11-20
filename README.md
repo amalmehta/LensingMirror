@@ -30,3 +30,7 @@ flowchart LR
 - [System design](docs/SYSTEM-DESIGN.md): how it works and why
 - [File structure](docs/FILE-STRUCTURE.md): what's where
 - Builds on [Black Hole Simulator](https://amalmehta.github.io/BlackHoleSimulator/)
+
+## How it was built
+
+How this was built and how it works, with diagrams: [docs/HOW-IT-WAS-BUILT.md](docs/HOW-IT-WAS-BUILT.md)
